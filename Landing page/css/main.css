@@ -34,6 +34,7 @@ nav {
 
 main {
     background-color: lightGray;
+    min-height: 90vh;
 
 }
 
@@ -65,11 +66,13 @@ main {
 
 .parent a {
     text-decoration: none;
+    
 }    
 
 .parent .myCard {
    min-height: 200px;
     width:100%;
+    cursor: pointer;
 }    
 
 .parent .myCard:hover {
@@ -135,6 +138,10 @@ main {
     margin-bottom: 4vh;
 }
 
+.footerList ul li {
+    margin-bottom: 2vh;
+}
+
 .footerList ul li a {
     text-decoration: none;
     color: black;
@@ -143,13 +150,106 @@ main {
 
 /* footer end */
 
+/* modal start */
+
+.myModal {
+    width: 40%;
+    height: 60vh;
+    position: fixed;
+    top: 15vh;
+    left: 30%;
+    background-color: white;
+    border-radius: 15px;
+    display: none;
+    z-index: 5;
+}
+
+.myModal img {
+    width: 100%;
+}
+.myModal h2 {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.myModal span {
+    display: inline-block;
+    margin: 0.5em 10%;
+    color :orangered;
+}
+.myModal p {
+    text-align: justify;
+    width: 80%;
+    margin: 0.5em auto;
+}
+
+.myModal button {
+    display: block;
+    width: 30%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-color: blue;
+    background-color: transparent;
+    margin: 1em auto;
+}
+
+.myModal button:hover {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.myModal .closeBtn {
+    position: absolute;
+    top: 5px;
+    right: -20px;
+    font-size: 22px;
+ }
+
+ .myModal .closeBtn:hover {
+    color: blue;
+    cursor: pointer;
+ }
+
+ .fadeBackground {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: gray;
+    opacity: 85%;
+    display: none;
+ }
+
+
+/* modal end */
+
 /* tablet view */
 @media only screen and (min-width: 960px) {
     .parent {
         grid-template-columns: repeat(2, 1fr);
         } 
 .myContainer {
-    grid-template-columns: 1fr;
-}       
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+}   
+
+.info {
+    text-align: center;
 }
 
+.info blockquote {
+    width: 100%;
+}
+}
+
+@media only screen and (max-width: 720px) {
+    .parent {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .myContainer {
+        grid-template-columns: 1fr;
+    }
+}
